@@ -53,7 +53,7 @@ export async function GET(
 
 export async function PUT(
   request: NextRequest,
-  { params }: { params: { id: string } },
+  { params }: { params: { id: Number } },
 ) {
   try {
     const user = await getCurrentUser();
@@ -61,8 +61,10 @@ export async function PUT(
       return NextResponse.json({ error: "Not authenticated" }, { status: 401 });
     }
 
+    const number = Number(params.id);
+    console.log(number, typeof number);
     const ticket = await prisma.ticket.findUnique({
-      where: { id: params.id },
+      where: { id: number },
     });
 
     if (!ticket) {
@@ -144,7 +146,7 @@ export async function PUT(
     updateData.updatedAt = new Date();
 
     const updatedTicket = await prisma.ticket.update({
-      where: { id: params.id },
+      where: { id: number },
       data: updateData,
       include: {
         user: {
