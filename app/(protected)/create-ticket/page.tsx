@@ -337,17 +337,14 @@ const CreateTicketPage: React.FC = () => {
               )}
 
               {/* Submit Button */}
-              <div className="flex gap-3 pt-4">
-                <Button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="flex-1"
-                >
+              <div className="flex gap-3 justify-end pt-4">
+                <Button type="submit" disabled={isSubmitting}>
                   {isSubmitting ? "Creating Ticket..." : "Create Ticket"}
                 </Button>
                 <Button
                   type="button"
                   variant="outline"
+                  className="border border-blue-500"
                   onClick={() => router.push("/dashboard")}
                 >
                   Cancel

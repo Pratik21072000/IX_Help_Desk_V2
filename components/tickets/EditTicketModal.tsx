@@ -271,6 +271,36 @@ export const EditTicketModal: React.FC<EditTicketModalProps> = ({
           </Alert>
         ) : (
           <form onSubmit={handleSubmit} className="space-y-4">
+            {/* Subject */}
+            <div className="space-y-2">
+              <Label htmlFor="subject">
+                Subject <span className="text-red-500">*</span>
+              </Label>
+              <Input
+                id="subject"
+                placeholder="Enter a brief summary of your request"
+                value={formData.subject}
+                onChange={(e) => handleInputChange("subject", e.target.value)}
+                required
+              />
+            </div>
+
+            {/* Description */}
+            <div className="space-y-2">
+              <Label htmlFor="description">
+                Description <span className="text-red-500">*</span>
+              </Label>
+              <Textarea
+                id="description"
+                placeholder="Provide detailed information about your request..."
+                value={formData.description}
+                onChange={(e) =>
+                  handleInputChange("description", e.target.value)
+                }
+                rows={4}
+                required
+              />
+            </div>
             {/* Department Selection */}
             <div className="space-y-2">
               <Label htmlFor="department">
@@ -412,37 +442,6 @@ export const EditTicketModal: React.FC<EditTicketModalProps> = ({
               </div>
             )}
 
-            {/* Subject */}
-            <div className="space-y-2">
-              <Label htmlFor="subject">
-                Subject <span className="text-red-500">*</span>
-              </Label>
-              <Input
-                id="subject"
-                placeholder="Enter a brief summary of your request"
-                value={formData.subject}
-                onChange={(e) => handleInputChange("subject", e.target.value)}
-                required
-              />
-            </div>
-
-            {/* Description */}
-            <div className="space-y-2">
-              <Label htmlFor="description">
-                Description <span className="text-red-500">*</span>
-              </Label>
-              <Textarea
-                id="description"
-                placeholder="Provide detailed information about your request..."
-                value={formData.description}
-                onChange={(e) =>
-                  handleInputChange("description", e.target.value)
-                }
-                rows={4}
-                required
-              />
-            </div>
-
             {/* Error Display */}
             {error && (
               <Alert variant="destructive">
@@ -452,11 +451,16 @@ export const EditTicketModal: React.FC<EditTicketModalProps> = ({
             )}
 
             {/* Submit Buttons */}
-            <div className="flex gap-3 pt-4">
-              <Button type="submit" disabled={isSubmitting} className="flex-1">
+            <div className="flex gap-3 justify-end pt-4 ">
+              <Button type="submit" disabled={isSubmitting}>
                 {isSubmitting ? "Updating..." : "Update Ticket"}
               </Button>
-              <Button type="button" variant="outline" onClick={onClose}>
+              <Button
+                type="button"
+                variant="outline"
+                onClick={onClose}
+                className="border border-blue-500"
+              >
                 <X className="h-4 w-4 mr-2" />
                 Cancel
               </Button>
