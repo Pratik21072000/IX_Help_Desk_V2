@@ -12,6 +12,9 @@ dist
 dist-ssr
 *.local
 
+# Ignore local database
+prisma/dev.db
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
