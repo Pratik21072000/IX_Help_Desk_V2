@@ -68,6 +68,7 @@ const CreateTicketPage: React.FC = () => {
     if (formData.department && formData.category) {
       const subcategories =
         DEPARTMENT_STRUCTURE[formData.department][formData.category] || [];
+
       setAvailableSubcategories(subcategories);
       setFormData((prev) => ({ ...prev, subcategory: "" }));
     } else {
@@ -375,9 +376,11 @@ const CreateTicketPage: React.FC = () => {
                       {category}
                     </h4>
                     <div className="text-xs font-body text-incub-gray-600">
-                      {DEPARTMENT_STRUCTURE[formData.department][category].join(
-                        ", ",
-                      )}
+                      {DEPARTMENT_STRUCTURE[formData.department][category]
+                        ? DEPARTMENT_STRUCTURE[formData.department][
+                            category
+                          ].join(", ")
+                        : ""}
                     </div>
                   </div>
                 ))}
