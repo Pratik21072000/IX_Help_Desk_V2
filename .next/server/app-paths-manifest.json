@@ -1,0 +1,12 @@
+{
+  "/login/page": "app/login/page.js",
+  "/api/tickets/route": "app/api/tickets/route.js",
+  "/api/dashboard/stats/route": "app/api/dashboard/stats/route.js",
+  "/api/profile/route": "app/api/profile/route.js",
+  "/api/auth/logout/route": "app/api/auth/logout/route.js",
+  "/api/auth/login/route": "app/api/auth/login/route.js",
+  "/(protected)/dashboard/page": "app/(protected)/dashboard/page.js",
+  "/(protected)/my-tickets/page": "app/(protected)/my-tickets/page.js",
+  "/(protected)/profile/page": "app/(protected)/profile/page.js",
+  "/(protected)/manage-tickets/page": "app/(protected)/manage-tickets/page.js"
+}
