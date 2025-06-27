@@ -23,7 +23,8 @@ const LoginPage: React.FC = () => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const { login } = useAuth();
+  const { user, login } = useAuth();
+
   const router = useRouter();
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -32,9 +33,15 @@ const LoginPage: React.FC = () => {
     setIsLoading(true);
 
     try {
-      const success = await login(username, password);
-      if (success) {
-        router.push("/dashboard");
+      const userRole = await login(username, password);
+
+      if (userRole) {
+        console.log(userRole);
+        if (userRole?.role === "EMPLOYEE") {
+          router.push("/my-tickets");
+        } else {
+          router.push("/dashboard");
+        }
       } else {
         setError("Invalid username or password");
       }

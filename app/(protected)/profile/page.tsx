@@ -352,7 +352,7 @@ const ProfilePage: React.FC = () => {
         </Card>
 
         {/* Password Change Section - Only show when editing */}
-        {isEditing && (
+        {/* {isEditing && (
           <Card className="border-0 shadow-lg">
             <CardHeader>
               <CardTitle className="font-heading flex items-center gap-2">
@@ -418,16 +418,12 @@ const ProfilePage: React.FC = () => {
               </div>
             </CardContent>
           </Card>
-        )}
+        )} */}
 
         {/* Action Buttons */}
         {isEditing && (
-          <div className="flex gap-3">
-            <Button
-              onClick={handleSave}
-              disabled={isSaving}
-              className="flex-1 gap-2"
-            >
+          <div className="flex gap-3 justify-end">
+            <Button onClick={handleSave} disabled={isSaving} className=" gap-2">
               <Save className="h-4 w-4" />
               {isSaving ? "Saving..." : "Save Changes"}
             </Button>

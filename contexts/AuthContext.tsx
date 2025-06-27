@@ -78,7 +78,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
         if (contentType && contentType.includes("application/json")) {
           const data = await response.json();
           setUser(data.user);
-          return true;
+          return data.user;
         } else {
           console.error("Login failed: Response is not JSON");
           return false;

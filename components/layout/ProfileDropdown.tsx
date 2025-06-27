@@ -129,15 +129,15 @@ export const ProfileDropdown: React.FC = () => {
           <span className="font-body">My Profile</span>
         </DropdownMenuItem>
 
-        <DropdownMenuItem
+        {/* <DropdownMenuItem
           onClick={() => router.push("/settings")}
           className="gap-2 cursor-pointer"
         >
           <Settings className="h-4 w-4" />
           <span className="font-body">Settings</span>
-        </DropdownMenuItem>
+        </DropdownMenuItem> */}
 
-        {user.role !== "EMPLOYEE" && (
+        {/* {user.role !== "EMPLOYEE" && (
           <DropdownMenuItem
             onClick={() => router.push("/manage-tickets")}
             className="gap-2 cursor-pointer"
@@ -145,7 +145,7 @@ export const ProfileDropdown: React.FC = () => {
             <Shield className="h-4 w-4" />
             <span className="font-body">Admin Panel</span>
           </DropdownMenuItem>
-        )}
+        )} */}
 
         <DropdownMenuSeparator />
 

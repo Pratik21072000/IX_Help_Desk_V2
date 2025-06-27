@@ -35,7 +35,8 @@ export const Sidebar: React.FC = () => {
       name: "Dashboard",
       href: "/dashboard",
       icon: BarChart3,
-      show: true,
+      show:
+        user.role === "ADMIN" || user.role === "FINANCE" || user.role === "HR",
     },
     {
       name: "Create Ticket",

@@ -248,12 +248,12 @@ const ManageTicketsPage: React.FC = () => {
               <SelectTrigger className="w-[180px]">
                 <SelectValue placeholder="Select Department" />
               </SelectTrigger>
-              <SelectContent>
+              {/* <SelectContent>
                 <SelectItem value="ALL">All Departments</SelectItem>
                 <SelectItem value="ADMIN">Admin</SelectItem>
                 <SelectItem value="FINANCE">Finance</SelectItem>
                 <SelectItem value="HR">HR</SelectItem>
-              </SelectContent>
+              </SelectContent> */}
             </Select>
           )}
 
