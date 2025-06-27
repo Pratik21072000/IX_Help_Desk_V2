@@ -44,11 +44,11 @@ const CreateTicketPage: React.FC = () => {
   const [submitSuccess, setSubmitSuccess] = useState(false);
   const [error, setError] = useState("");
 
-  useEffect(() => {
-    if (user?.role !== "EMPLOYEE") {
-      router.push("/dashboard");
-    }
-  }, [user, router]);
+  // useEffect(() => {
+  //   if (user?.role !== "EMPLOYEE") {
+  //     router.push("/dashboard");
+  //   }
+  // }, [user, router]);
 
   // Update categories when department changes
   useEffect(() => {

@@ -35,7 +35,7 @@ const Sidebar: React.FC = () => {
       name: "Create Ticket",
       href: "/create-ticket",
       icon: Plus,
-      show: user?.role === "employee",
+      show: true,
     },
     {
       name: "My Tickets",

@@ -77,12 +77,12 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: "Not authenticated" }, { status: 401 });
     }
 
-    if (user.role !== "EMPLOYEE") {
-      return NextResponse.json(
-        { error: "Only employees can create tickets" },
-        { status: 403 },
-      );
-    }
+    // if (user.role !== "EMPLOYEE") {
+    //   return NextResponse.json(
+    //     { error: "Only employees can create tickets" },
+    //     { status: 403 },
+    //   );
+    // }
 
     const data: CreateTicketData = await request.json();
 
