@@ -436,7 +436,6 @@ export const EditTicketModal: React.FC<EditTicketModalProps> = ({
                   placeholder="Enter comment"
                   value={formData.comment}
                   onChange={(e) => handleInputChange("comment", e.target.value)}
-                  required
                   autoComplete="off"
                 />
               </div>

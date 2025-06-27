@@ -249,7 +249,7 @@ const DashboardPage: React.FC = () => {
       {/* Department Stats for Managers - Show only their department */}
       {isManager && user?.department && (
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="transform transition-transform hover:scale-105">
+          {/* <div className="transform transition-transform hover:scale-105">
             <StatsCard
               title={`${user.department === "HR" ? "HR" : user.department.charAt(0).toUpperCase() + user.department.slice(1).toLowerCase()} Tickets`}
               value={
@@ -268,8 +268,8 @@ const DashboardPage: React.FC = () => {
                     : "purple"
               }
             />
-          </div>
-          <div className="transform transition-transform hover:scale-105">
+          </div> */}
+          {/* <div className="transform transition-transform hover:scale-105">
             <StatsCard
               title="My Department Priority"
               value={stats.byPriority.high + stats.byPriority.medium}
@@ -277,8 +277,8 @@ const DashboardPage: React.FC = () => {
               color="yellow"
               description="High + Medium priority"
             />
-          </div>
-          <div className="transform transition-transform hover:scale-105">
+          </div> */}
+          {/* <div className="transform transition-transform hover:scale-105">
             <StatsCard
               title="Pending Action"
               value={stats.open + stats.inProgress}
@@ -286,7 +286,7 @@ const DashboardPage: React.FC = () => {
               color="red"
               description="Open + In Progress"
             />
-          </div>
+          </div> */}
         </div>
       )}
 

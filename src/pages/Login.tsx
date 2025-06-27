@@ -20,7 +20,7 @@ const Login: React.FC = () => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const { login } = useAuth();
+  const { login, user } = useAuth();
   const navigate = useNavigate();
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -29,10 +29,14 @@ const Login: React.FC = () => {
     setIsLoading(true);
 
     try {
-      const user = authenticateUser(username, password);
-      if (user) {
-        login(user);
-        navigate("/dashboard");
+      const userProfile = authenticateUser(username, password);
+      if (userProfile) {
+        login(userProfile);
+        if (user.role === "employee") {
+          navigate("/my-tickets");
+        } else {
+          navigate("/dashboard");
+        }
       } else {
         setError("Invalid username or password");
       }

@@ -65,7 +65,7 @@ export const TicketFilters: React.FC<TicketFiltersProps> = ({
   return (
     <div className="flex flex-wrap gap-3 items-center">
       {/* Department Filter - Only show for managers */}
-      {(userRole === "ADMIN" ||
+      {/* {(userRole === "ADMIN" ||
         userRole === "FINANCE" ||
         userRole === "HR") && (
         <Select
@@ -84,7 +84,7 @@ export const TicketFilters: React.FC<TicketFiltersProps> = ({
             ))}
           </SelectContent>
         </Select>
-      )}
+      )} */}
 
       {/* Priority Filter */}
       <Select
